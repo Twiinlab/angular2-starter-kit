@@ -8,6 +8,10 @@
   <title><%= webpackConfig.metadata.title %></title>
 
   <meta name="description" content="<%= webpackConfig.metadata.title %>">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+      
+  </style>
 
   <% if (webpackConfig.htmlElements.headTags) { %>
   <!-- Configured Head Tags  -->
@@ -16,14 +20,20 @@
 
   <!-- base url -->
   <base href="<%= webpackConfig.metadata.baseUrl %>">
-
-
+  
 </head>
 
 <body>
 
   <app>
-    Loading...
+    <div id="preview-area">
+    <div class="sk-folding-cube">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+    </div>
   </app>
 
   <% if (webpackConfig.metadata.isDevServer && webpackConfig.metadata.HMR !== true) { %>

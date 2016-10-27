@@ -18,12 +18,16 @@ import { AppState } from './app.service';
   templateUrl: './app.component.html'
 })
 export class App {
-  angularclassLogo = 'assets/img/angularclass-avatar.png';
-  name = 'Angular 2 Starter Kit';
-  url = 'https://twitter.com/AngularClass';
+  
+  name = 'Angular2 Basic Title';
 
-  constructor(
-    public appState: AppState) {
+  foods: any[] = [
+    {name: 'Pizza', rating: 'Excellent'},
+    {name: 'Burritos', rating: 'Great'},
+    {name: 'French fries', rating: 'Pretty good'},
+  ];
+
+  constructor(public appState: AppState) {
 
   }
 

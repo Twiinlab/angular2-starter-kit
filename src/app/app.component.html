@@ -1,25 +1,47 @@
-<nav>
-    <span>
-    <a [routerLink]=" ['./'] ">
-        Index
-    </a>
-    </span>
-    |
-    <span>
-    <a [routerLink]=" ['./home'] ">
-        Home
-    </a>
-    </span>
-    |
-    <span>
-    <a [routerLink]=" ['./about'] ">
-        About
-    </a>
-    </span>
-    |
-    <span><a [routerLink]=" ['./detail'] ">Detail</a></span>
-</nav>
+<md-sidenav-layout [class.m2app-dark]="isDarkTheme">
 
-<main>
+  <md-sidenav #sidenav mode="side" class="app-sidenav">
+    <h1> Side Menu </h1>
+    <md-nav-list>
+        <a md-list-item [routerLink]=" ['./'] " >Index</a>
+        <a md-list-item [routerLink]=" ['./home'] " >Home</a>
+        <a md-list-item [routerLink]=" ['./about'] " >About</a>
+        <a md-list-item [routerLink]=" ['./detail'] " >Detail</a>
+        <a md-list-item [routerLink]=" ['./contact'] " >Contact</a>
+    </md-nav-list>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button class="app-icon-button" (click)="sidenav.toggle()">
+      <i class="material-icons app-toolbar-menu">menu</i>
+    </button>
+    {{ name }}
+    <button md-button [routerLink]=" ['./'] " >Index</button>
+    <button md-button [routerLink]=" ['./home'] " >Home</button>
+    <button md-button [routerLink]=" ['./about'] " >About</button>
+    <button md-button [routerLink]=" ['./detail'] " >Detail</button>
+    <button md-button [routerLink]=" ['./contact'] " >Contact</button>    
+    <span class="app-toolbar-filler"></span>
+    <button md-button (click)="isDarkTheme = !isDarkTheme">TOGGLE DARK THEME</button>
+  </md-toolbar>
+
+  <div class="app-content">
     <router-outlet></router-outlet>
-</main>
+    <!--<md-card>
+        <md-list class="app-list">
+            <md-list-item *ngFor="let food of foods">
+            <h3 md-line>{{food.name}}</h3>
+            <p md-line class="demo-secondary-text">{{food.rating}}</p>
+            </md-list-item>
+        </md-list>
+    </md-card>-->
+  </div>
+
+</md-sidenav-layout>
+
+<span class="app-action" [class.m2app-dark]="isDarkTheme">
+  <button md-fab><md-icon>check circle</md-icon></button>
+</span>
+
+
+

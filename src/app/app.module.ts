@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 // import { RouterModule } from '@angular/router';
 import { removeNgStyles, createNewHosts, createInputTransfer } from '@angularclass/hmr';
 
+// Material design Import
+import { MaterialModule } from '@angular/material';
 /*
  * Platform and Environment providers/directives/pipes
  */
@@ -46,7 +48,9 @@ type StoreType = {
     HttpModule,
     HomeModule,
     AboutModule,
-    AppRoutingModule
+    AppRoutingModule,
+    // Material design module import
+    MaterialModule.forRoot()
   ],
   providers: [ // expose our Services and Providers into Angular's dependency injection
     ENV_PROVIDERS,

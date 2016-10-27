@@ -4,9 +4,12 @@ import { AboutRoutingModule } from './about.routing';
 
 import { AboutComponent }   from './about.component';
 
+import { MaterialModule } from '@angular/material';
+
 @NgModule({
   imports: [
-    AboutRoutingModule
+    AboutRoutingModule,
+    MaterialModule.forRoot()
   ],
   exports: [],
   declarations: [AboutComponent],

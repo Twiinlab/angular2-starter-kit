@@ -11,6 +11,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   // { path: 'about', loadChildren: './about' },
   { path: 'detail', loadChildren: () => System.import('./+detail') },
+  { path: 'contact', loadChildren: () => System.import('./+contact') },
   { path: '**',    component: NoContent },
 ];
 
